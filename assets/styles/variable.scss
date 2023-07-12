@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+
+$primary: #E7E7E7;
+$secondary: #FF3838;
+$dark: #000000;
+$font-family-base: "Goldman";
+
+body {
+    margin: 0;
+    background-color: $dark;
+    color: $primary;
+}
