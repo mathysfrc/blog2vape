@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{parent()}}
+	|| Les Vapes
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent()}}
+	{{ encore_entry_link_tags('vape') }}
+{% endblock %}
+
+{% block body %}
+	<section class="container">
+		<h1 class="my-5 text-primary d-flex justify-content-center align-self-center text-uppercase">Les Vapes</h1>
+		<div class="row">
+			{% for vape in vaper %}
+				{% include '/components/vape.html.twig' %}
+			{% endfor %}
+		</div>
+	</section>
+{% endblock %}
+
+{% block footer %}
+	{% include 'components/_footer.html.twig' %}
+{% endblock %}
