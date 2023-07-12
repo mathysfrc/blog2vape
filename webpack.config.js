@@ -13,6 +13,7 @@ Encore
     .setPublicPath('/build')
     .addStyleEntry('home', './assets/styles/home.scss')
     .addStyleEntry('presentation', './assets/styles/presentation.scss')
+    .addStyleEntry('vape', './assets/styles/vape.scss')
     // only needed for CDN's or subdirectory deploy
     //.setManifestKeyPrefix('build/')
     .copyFiles({
