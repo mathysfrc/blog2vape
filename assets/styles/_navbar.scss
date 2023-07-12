@@ -1,0 +1,22 @@
+img.logo-nav {
+    height: 5rem;
+    border-radius: 50%;
+    border: 2px solid $secondary;
+}
+
+.nav-link {
+    --bs-nav-link-color: $primary;
+    color: $primary;
+}
+
+.nav-link:hover {
+    color: $secondary;
+}
+
+.navbar-nav {
+    --bs-nav-link-hover-color: $secondary;
+}
+
+.navbar {
+    --bs-navbar-hover-color: $secondary;
+}

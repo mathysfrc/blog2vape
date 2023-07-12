@@ -1,0 +1,25 @@
+@import "variable";
+
+body {
+    margin: 0;
+    background-color: $dark;
+    color: $primary;
+}
+
+.imageCe {
+    border: 3px solid $secondary;
+    height: 40rem;
+}
+
+.textPres {
+    text-shadow: 1px 0 $secondary, -1px 0 $secondary, 0 1px $secondary, 0 -1px $secondary,
+    1px 1px $secondary, -1px -1px $secondary, 1px -1px $secondary, -1px 1px $secondary;
+}
+
+h1 {
+    font-size:  3.5rem;
+}
+
+p {
+    font-size: 1.14rem;
+}

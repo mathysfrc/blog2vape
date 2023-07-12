@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+	{{ parent()}}
+	{{ encore_entry_link_tags('home') }}
+{% endblock %}
+
+{% block title %}
+	{{ parent() }}
+	|| Accueil
+{% endblock %}
+
+{% block body %}
+
+   <h1 class="fw-bold text-primary d-flex justify-content-center align-self-center text-uppercase">Blog2Vape</h1>
+
+{% endblock %}

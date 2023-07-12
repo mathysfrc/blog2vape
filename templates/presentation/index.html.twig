@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent()}}
+	{{ encore_entry_link_tags('presentation') }}
+{% endblock %}
+
+{% block title %}
+	{{parent()}}
+	|| Présentation
+{% endblock %}
+
+{% block body %}
+	<section class="container">
+		<h1 class="d-flex justify-content-center my-5">Présentation</h1>
+		<div class="row">
+			<div class="col-6">
+				<img class="imageCe my-5 ms-5 rounded rounded-10 img-fluid" src=" {{ asset('build/images/ceg.png') }} " alt="image CE">
+			</div>
+			<div class="col-6">
+				<h2 class="mt-5 mb-4">Mais pourquoi Blog2Vape ?</h2>
+				<p>Blog2Vape est un site de référencement créé par Mathys FRANCO.
+					Le but de ce site internet est de luter contre la cigarette en proposant aux utilisateurs une plus grande conaissance
+					 de la cigarette éléctronique.
+					Blog2Vape est un site qui référence plusieurs types de vapoteuse, triées dans des catégories bien distinctes avec
+					 des déscription les plus poussées pour chacune de ces dernières.
+					L’objectif du site est d’informer au mieux le client, pour un choix utile et réfléchi et enfin, dans l’optique
+					 de répendre cette utilisation au maximum.
+					Enrichir ses pensées, c’est aussi améliorer ça santée !</p>
+
+                    <h2 class="mt-5 mb-4">De quoi ce compose une cigarette éléctronique ?</h2>
+                    <p>Trois éléments principaux composent généralement une cigarette électronique : un atomiseur,
+                     un réservoir d'e-liquide et une batterie.</p>
+
+                     <h2 class="textPres mt-5 mb-4 d-flex justify-content-center">N’hésitez plus, venez essayer !</h2>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{% block footer %}
+{% include 'components/_footer.html.twig' %}{% endblock %}
