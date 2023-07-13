@@ -14,6 +14,7 @@ Encore
     .addStyleEntry('home', './assets/styles/home.scss')
     .addStyleEntry('presentation', './assets/styles/presentation.scss')
     .addStyleEntry('vape', './assets/styles/vape.scss')
+    .addStyleEntry('description', './assets/styles/description.scss')
     // only needed for CDN's or subdirectory deploy
     //.setManifestKeyPrefix('build/')
     .copyFiles({

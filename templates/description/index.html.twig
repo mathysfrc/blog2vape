@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent()}}
+	{{ encore_entry_link_tags('description') }}
+{% endblock %}
+
+{% block title %}
+	{{parent()}}
+	|| Description
+{% endblock %}
+
+{% block body %}
+	<section class="container">
+		<h1 class="d-flex justify-content-center mt-5 fw-bold">{{ vape.brand }}</h1>
+		<h2 class="d-flex justify-content-center mt-4 mb-5">{{ vape.model }}</h2>
+		<div class="row">
+			<div class="col-4 my-5">
+				<img src="{{ asset('build/images/placeholder-vape.jpeg')}}" class="imageDesc rounded rounded-10 border border-secondary" alt="...">
+			</div>
+			<div class="col-7 mx-5 my-5">
+				<h3 class="text-secondary text-uppercase">
+					Caractéristiques</h3>
+				<p class="mt-4 fs-5 mb-0">
+					<span class="fw-bold">HAUTEUR</span>:
+						{{ vape.height }}
+						mm</p>
+
+				<p class="fs-5 mb-0">
+					<span class="fw-bold">LONGUEUR
+					</span>:
+					{{ vape.length }}
+					mm</p>
+				<p class="fs-5 mb-0">
+					<span class="fw-bold">LARGEUR
+					</span>:
+					{{ vape.width }}
+					mm</p>
+				<p class="fs-5 mb-0">
+					<span class="fw-bold">DIAMETRE
+					</span>:
+					{{ vape.diametre }}
+					mm</p>
+				<p class="fs-5 mb-0">
+					<span class="fw-bold">CONTENANCE</span>
+					:
+					{{ vape.contenance }}
+					ml</p>
+				<p class="fs-5 mb-0">
+					<span class="fw-bold">TYPE DE VAPE</span>
+					:
+					{{ vape.type }}</p>
+				<p class="fs-5 mb-0">
+					<span class="fw-bold">ACCU</span>
+					:
+					{{ vape.accu }}</p>
+				<p class="fs-5 mb-0">
+					<span class="fw-bold">PUISSANCE</span>
+					:
+					{{ vape.puissance }}
+					W</p>
+
+				<h3 class="text-secondary text-uppercase my-5">
+					Description</h3>
+
+				<p class="fs-6">
+					{{ vape.description }}
+				</p>
+
+				<div class="row">
+					<div class="col">
+						<h1 class="text-uppercase my-5">
+
+							Prix :
+							{{ vape.price }}
+							$</h1>
+					</div>
+					<div class="col d-flex justify-content-end">
+						<a href="{{ path('app_vape')}}" class="btn btn-lg my-5 btn-dark border border-secondary text-uppercase fw-bold">Retour</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{% block footer %}
+{% include 'components/_footer.html.twig' %}{% endblock %}

@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\VapeRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: VapeRepository::class)]
@@ -21,6 +22,33 @@ class Vape
 
     #[ORM\Column]
     private ?int $price = null;
+
+    #[ORM\Column]
+    private ?int $height = null;
+
+    #[ORM\Column]
+    private ?int $length = null;
+
+    #[ORM\Column]
+    private ?int $width = null;
+
+    #[ORM\Column]
+    private ?int $diametre = null;
+
+    #[ORM\Column]
+    private ?int $contenance = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $type = null;
+
+    #[ORM\Column]
+    private ?int $accu = null;
+
+    #[ORM\Column]
+    private ?int $puissance = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $description = null;
 
     public function getId(): ?int
     {
@@ -59,6 +87,114 @@ class Vape
     public function setPrice(int $price): static
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+    public function getHeight(): ?int
+    {
+        return $this->height;
+    }
+
+    public function setHeight(int $height): static
+    {
+        $this->height = $height;
+
+        return $this;
+    }
+
+    public function getLength(): ?int
+    {
+        return $this->length;
+    }
+
+    public function setLength(int $length): static
+    {
+        $this->length = $length;
+
+        return $this;
+    }
+
+    public function getWidth(): ?int
+    {
+        return $this->width;
+    }
+
+    public function setWidth(int $width): static
+    {
+        $this->width = $width;
+
+        return $this;
+    }
+
+    public function getDiametre(): ?int
+    {
+        return $this->diametre;
+    }
+
+    public function setDiametre(int $diametre): static
+    {
+        $this->diametre = $diametre;
+
+        return $this;
+    }
+
+    public function getContenance(): ?int
+    {
+        return $this->contenance;
+    }
+
+    public function setContenance(int $contenance): static
+    {
+        $this->contenance = $contenance;
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): static
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getAccu(): ?int
+    {
+        return $this->accu;
+    }
+
+    public function setAccu(int $accu): static
+    {
+        $this->accu = $accu;
+
+        return $this;
+    }
+
+    public function getPuissance(): ?int
+    {
+        return $this->puissance;
+    }
+
+    public function setPuissance(int $puissance): static
+    {
+        $this->puissance = $puissance;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): static
+    {
+        $this->description = $description;
 
         return $this;
     }
