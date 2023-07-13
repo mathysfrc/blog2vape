@@ -5,3 +5,37 @@ body {
     background-color: $dark;
     color: $primary;
 }
+
+.form-label {
+    color: $primary;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+
+
+.form-select {
+    border: solid 1px $secondary;
+    width: 630px;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    border: solid 1px $secondary;
+    width: 630px;
+    height: 50px;
+    margin-right: 10px;
+    margin-bottom: 1rem;
+}
+
+
+
+.search {
+    width: 500px;
+    height: 50px;
+    margin-left: 25rem;
+    margin-bottom: 3rem;
+}

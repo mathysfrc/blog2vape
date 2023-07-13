@@ -13,6 +13,16 @@
 {% block body %}
 	<section class="container">
 		<h1 class="d-flex justify-content-center my-5">Présentation</h1>
+
+
+		<div class="jobOfferForm">
+			{{ form_start(form) }}
+			{{ form_widget(form, {'attr' : {'class' : 'd-flex flex-md-row flex-column'}}) }}
+			<button class="search btn btn-secondary border border-primary text-uppercase fw-bold">RECHERCHER</button>
+			{{ form_end(form) }}
+		</div>
+
+		
 		<div class="row">
 			<div class="col-6">
 				<img class="imageCe my-5 ms-5 rounded rounded-10 img-fluid" src=" {{ asset('build/images/ceg.png') }} " alt="image CE">
