@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vape{% endblock %}
+
+{% block body %}
+    <h1>Vape</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ vape.id }}</td>
+            </tr>
+            <tr>
+                <th>Brand</th>
+                <td>{{ vape.brand }}</td>
+            </tr>
+            <tr>
+                <th>Model</th>
+                <td>{{ vape.model }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ vape.price }}</td>
+            </tr>
+            <tr>
+                <th>Height</th>
+                <td>{{ vape.height }}</td>
+            </tr>
+            <tr>
+                <th>Length</th>
+                <td>{{ vape.length }}</td>
+            </tr>
+            <tr>
+                <th>Width</th>
+                <td>{{ vape.width }}</td>
+            </tr>
+            <tr>
+                <th>Diametre</th>
+                <td>{{ vape.diametre }}</td>
+            </tr>
+            <tr>
+                <th>Contenance</th>
+                <td>{{ vape.contenance }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ vape.type }}</td>
+            </tr>
+            <tr>
+                <th>Accu</th>
+                <td>{{ vape.accu }}</td>
+            </tr>
+            <tr>
+                <th>Puissance</th>
+                <td>{{ vape.puissance }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ vape.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_vape_admin_index') }}">back to list</a>
+
+    <a href="{{ path('app_vape_admin_edit', {'id': vape.id}) }}">edit</a>
+
+    {{ include('vape_admin/_delete_form.html.twig') }}
+{% endblock %}

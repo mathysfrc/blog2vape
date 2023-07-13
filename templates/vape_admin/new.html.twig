@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Vape{% endblock %}
+
+{% block body %}
+    <h1>Create new Vape</h1>
+
+    {{ include('vape_admin/_form.html.twig') }}
+
+    <a href="{{ path('app_vape_admin_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vape index{% endblock %}
+
+{% block body %}
+    <h1>Vape index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Price</th>
+                <th>Height</th>
+                <th>Length</th>
+                <th>Width</th>
+                <th>Diametre</th>
+                <th>Contenance</th>
+                <th>Type</th>
+                <th>Accu</th>
+                <th>Puissance</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vape in vapes %}
+            <tr>
+                <td>{{ vape.id }}</td>
+                <td>{{ vape.brand }}</td>
+                <td>{{ vape.model }}</td>
+                <td>{{ vape.price }}</td>
+                <td>{{ vape.height }}</td>
+                <td>{{ vape.length }}</td>
+                <td>{{ vape.width }}</td>
+                <td>{{ vape.diametre }}</td>
+                <td>{{ vape.contenance }}</td>
+                <td>{{ vape.type }}</td>
+                <td>{{ vape.accu }}</td>
+                <td>{{ vape.puissance }}</td>
+                <td>{{ vape.description }}</td>
+                <td>
+                    <a href="{{ path('app_vape_admin_show', {'id': vape.id}) }}">show</a>
+                    <a href="{{ path('app_vape_admin_edit', {'id': vape.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_vape_admin_new') }}">Create new</a>
+{% endblock %}
