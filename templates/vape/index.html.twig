@@ -13,6 +13,15 @@
 {% block body %}
 	<section class="container">
 		<h1 class="my-5 text-primary d-flex justify-content-center align-self-center text-uppercase">Les Vapes</h1>
+
+			<div class="vapeForm">
+			{{ form_start(form) }}
+			{{ form_widget(form, {'attr' : {'class' : 'd-flex flex-md-row flex-column'}}) }}
+			<button class="search btn btn-dark border border-secondary text-uppercase fw-bold">RECHERCHER</button>
+			{{ form_end(form) }}
+		</div>
+
+		
 		<div class="row">
 			{% for vape in vaper %}
 				{% include '/components/vape.html.twig' %}
