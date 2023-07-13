@@ -33,4 +33,15 @@ class VapeController extends AbstractController
             'form' => $form,
         ]);
     }
+
+    #[Route('/details-vape/{id}/', name: 'vape_show')]
+    public function show(
+        int $id,
+        VapeRepository $vapeRepository,
+    ): Response {
+        $vape = $vapeRepository->find($id);
+        return $this->render('description/index.html.twig', [
+        'vape' => $vape,
+        ]);
+    }
 }

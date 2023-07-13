@@ -5,7 +5,7 @@
   <div class="card-body">
     <h5 class="card-title d-flex fw-bold justify-content-center text-primary"> {{ vape.brand }}</h5>
     <p class="card-text d-flex justify-content-center text-primary"> {{ vape.model }}</p>
-    <a href="#" class="btn btn-lg d-flex text-uppercase justify-content-center btn-outline-secondary text-primary">En savoir + ?</a>
+    <a href=" {{ path("vape_show", {'id': vape.id}) }}" class="btn btn-lg d-flex text-uppercase justify-content-center btn-outline-secondary text-primary">En savoir + ?</a>
   </div>
 </div>
 </div>
