@@ -1,11 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Vape{% endblock %}
+{% block title %}
+	{{ parent()}}
+	|| Admin
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent()}}
+	{{ encore_entry_link_tags('admin') }}
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Vape</h1>
+<section class="container">
+		<h1 class="my-5 text-primary d-flex justify-content-center align-self-center text-uppercase">Créer une nouvelle vape</h1>
 
     {{ include('vape_admin/_form.html.twig') }}
 
-    <a href="{{ path('app_vape_admin_index') }}">back to list</a>
+    <a class="btn btn-lg btn-outline-secondary text-primary my-5" href="{{ path('app_vape_admin_index') }}">Revenir à la liste</a>
+    </section>
 {% endblock %}

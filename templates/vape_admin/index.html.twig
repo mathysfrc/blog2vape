@@ -1,57 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Vape index{% endblock %}
+{% block title %}
+	{{ parent()}}
+	|| Admin
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent()}}
+	{{ encore_entry_link_tags('admin') }}
+{% endblock %}
 
 {% block body %}
-    <h1>Vape index</h1>
+	<section class="container">
+		<h1 class="my-5 text-primary d-flex justify-content-center align-self-center text-uppercase">Admin || Les Vapes</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Brand</th>
-                <th>Model</th>
-                <th>Price</th>
-                <th>Height</th>
-                <th>Length</th>
-                <th>Width</th>
-                <th>Diametre</th>
-                <th>Contenance</th>
-                <th>Type</th>
-                <th>Accu</th>
-                <th>Puissance</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for vape in vapes %}
-            <tr>
-                <td>{{ vape.id }}</td>
-                <td>{{ vape.brand }}</td>
-                <td>{{ vape.model }}</td>
-                <td>{{ vape.price }}</td>
-                <td>{{ vape.height }}</td>
-                <td>{{ vape.length }}</td>
-                <td>{{ vape.width }}</td>
-                <td>{{ vape.diametre }}</td>
-                <td>{{ vape.contenance }}</td>
-                <td>{{ vape.type }}</td>
-                <td>{{ vape.accu }}</td>
-                <td>{{ vape.puissance }}</td>
-                <td>{{ vape.description }}</td>
-                <td>
-                    <a href="{{ path('app_vape_admin_show', {'id': vape.id}) }}">show</a>
-                    <a href="{{ path('app_vape_admin_edit', {'id': vape.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="14">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="text-primary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Marque</th>
+					<th class="text-primary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Modèle</th>
+					<th class="text-primary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Prix</th>
+                    <th class="bg-dark"></th>
+                    <th class="bg-dark"></th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for vape in vapes %}
+					<tr>
+						<td class="fs-5 bg-dark text-primary fw-medium">{{ vape.brand }}</td>
+						<td class="fs-5 bg-dark text-primary fw-medium">{{ vape.model }}</td>
+						<td class="fs-5 bg-dark text-primary fw-medium">{{ vape.price }} $</td>
+                        
+						<td class="bg-dark">
+							<a class="mx-5 d-flex justify-content-center" href="{{ path('app_vape_admin_show', {'id': vape.id}) }}"> {% include 'icon/show.svg'%}</a>
+                        </td>
+                        <td class="bg-dark">
+							<a class="d-flex justify-content-center" href="{{ path('app_vape_admin_edit', {'id': vape.id}) }}">{% include 'icon/edit.svg' %}</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="14">Aucune vape trouvée</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
 
-    <a href="{{ path('app_vape_admin_new') }}">Create new</a>
+		<a class="btn btn-lg btn-outline-secondary text-primary my-5" href="{{ path('app_vape_admin_new') }}">Créer une nouvelle vape</a>
+	</section>
 {% endblock %}

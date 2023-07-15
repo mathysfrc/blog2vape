@@ -25,7 +25,7 @@ class SearchVapeType extends AbstractType
                 'required' => false,
                 'label' => 'MOTS CLÉS',
             ])
-            ->add('contract', ChoiceType::class, [
+            ->add('categories', ChoiceType::class, [
                 'choices' => self::CATEGORIES,
                 'required' => false,
                 'label' => 'CATEGORIES',
