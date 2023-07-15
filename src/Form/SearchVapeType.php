@@ -36,7 +36,6 @@ class SearchVapeType extends AbstractType
     {
         $resolver->setDefaults([
             'csrf_protection' => false,
-
         ]);
     }
 
