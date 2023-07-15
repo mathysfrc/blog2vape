@@ -8,11 +8,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\SearchVapeType;
+use App\Repository\VapeCategoryRepository;
 
 class VapeController extends AbstractController
 {
     #[Route('/vape', name: 'app_vape')]
-    public function index(Request $request, VapeRepository $vapeRepository): Response
+    public function index(Request $request, VapeRepository $vapeRepository, VapeCategoryRepository $vapeCategoryRepository): Response
     {
 
         
@@ -29,6 +30,10 @@ class VapeController extends AbstractController
 
         return $this->render('vape/index.html.twig', [
             'controller_name' => 'VapeController',
+            'category' => $vapeCategoryRepository->findBy([], [
+                'name' => 'ASC',
+            ]),
+
             'vaper' => $vape,
             'form' => $form,
         ]);

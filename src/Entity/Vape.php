@@ -70,6 +70,9 @@ class Vape
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?DatetimeInterface $updatedAt = null;
 
+    #[ORM\ManyToOne(inversedBy: 'category')]
+    private ?VapeCategory $category = null;
+
 
     public function getId(): ?int
     {
@@ -242,6 +245,18 @@ class Vape
         if ($image) {
             $this->updatedAt = new DateTime('now');
         }
+        return $this;
+    }
+
+    public function getCategory(): ?VapeCategory
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?VapeCategory $category): static
+    {
+        $this->category = $category;
+
         return $this;
     }
 }
