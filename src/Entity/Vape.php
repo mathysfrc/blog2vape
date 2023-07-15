@@ -5,8 +5,15 @@ namespace App\Entity;
 use App\Repository\VapeRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
+use DateTimeInterface;
+use DateTime;
+
 
 #[ORM\Entity(repositoryClass: VapeRepository::class)]
+#[Vich\Uploadable]
 class Vape
 {
     #[ORM\Id]
@@ -49,6 +56,20 @@ class Vape
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $poster = null;
+
+    #[Vich\UploadableField(mapping: 'vape_file', fileNameProperty: 'poster')]
+    #[Assert\File(
+        maxSize: '1M',
+        mimeTypes: ['image/jpeg', 'image/png', 'image/webp'],
+    )]
+    private ?File $posterFile = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    private ?DatetimeInterface $updatedAt = null;
+
 
     public function getId(): ?int
     {
@@ -196,6 +217,31 @@ class Vape
     {
         $this->description = $description;
 
+        return $this;
+    }
+
+    public function getPoster(): ?string
+    {
+        return $this->poster;
+    }
+
+    public function setPoster(?string $poster): Vape
+    {
+        $this->poster = $poster;
+
+        return $this;
+    }
+
+    public function getPosterFile(): ?File
+    {
+        return $this->posterFile;
+    }
+
+    public function setPosterFile(File $image = null): Vape
+    {
+        if ($image) {
+            $this->updatedAt = new DateTime('now');
+        }
         return $this;
     }
 }

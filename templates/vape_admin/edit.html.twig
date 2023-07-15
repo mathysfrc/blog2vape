@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent()}}
+	|| Admin
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent()}}
+	{{ encore_entry_link_tags('admin') }}
+{% endblock %}
+
+{% block body %}
+<section class="container">
+		<h1 class="my-5 text-primary d-flex justify-content-center align-self-center text-uppercase">Modifier une vape</h1>
+
+    {{ include('vape_admin/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a class="btn btn-lg btn-outline-secondary text-primary mt-5" href="{{ path('app_vape_admin_index') }}">Revenir à la liste</a>
+
+    {{ include('vape_admin/_delete_form.html.twig') }}
+    </section>
+{% endblock %}

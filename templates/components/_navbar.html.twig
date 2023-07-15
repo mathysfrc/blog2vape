@@ -15,9 +15,20 @@
 				<li class="nav-item">
 					<a class="nav-link mx-5 fs-4 fw-bold" href="{{ path('app_vape') }}">Vapes</a>
 				</li>
+				{% if app.user %}
 				<li class="nav-item">
-					<a class="nav-link mx-5 fs-4 fw-bold" href="">Admin</a>
+					<a class="nav-link mx-5 fs-4 fw-bold" href="{{ path('app_vape_admin_index')}}">Admin</a>
 				</li>
+
+				<li class="nav-item">
+					<a class="nav-link mx-5 fs-4 fw-bold" href="{{ path('app_logout')}}">Déconnexion</a>
+				</li>
+
+				{% else %}
+					<li class="nav-item">
+					<a class="nav-link mx-5 fs-4 fw-bold" href=" {{ path('app_login') }}">Connexion</a>
+				</li>
+				{% endif %}
 			</ul>
 		</div>
 	</div>

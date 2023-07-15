@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent()}}
+	|| Admin
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent()}}
+	{{ encore_entry_link_tags('admin') }}
+{% endblock %}
+
+{% block body %}
+<section class="container">
+		<h1 class="my-5 text-primary d-flex justify-content-center align-self-center text-uppercase">Détails</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th class="col-2 text-secondary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Marque</th>
+                <td class="col-7 fs-5 bg-dark text-primary fw-medium">{{ vape.brand }}</td>
+            </tr>
+            <tr>
+                <th class="text-secondary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Modèle</th>
+                <td class="fs-5 bg-dark text-primary fw-medium">{{ vape.model }}</td>
+            </tr>
+            <tr>
+                <th class="text-secondary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Prix</th>
+                <td class="fs-5 bg-dark text-primary fw-medium">{{ vape.price }} $</td>
+            </tr>
+            <tr>
+                <th class="text-secondary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Hauteur</th>
+                <td class="fs-5 bg-dark text-primary fw-medium">{{ vape.height }} mm</td>
+            </tr>
+            <tr>
+                <th class="text-secondary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Longueur</th>
+                <td class="fs-5 bg-dark text-primary fw-medium">{{ vape.length }} mm</td>
+            </tr>
+            <tr>
+                <th class="text-secondary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Largeur</th>
+                <td class="fs-5 bg-dark text-primary fw-medium">{{ vape.width }} mm</td>
+            </tr>
+            <tr>
+                <th class="text-secondary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Diamètre</th>
+                <td class="fs-5 bg-dark text-primary fw-medium">{{ vape.diametre }} mm</td>
+            </tr>
+            <tr>
+                <th class="text-secondary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Contenance</th>
+                <td class="fs-5 bg-dark text-primary fw-medium">{{ vape.contenance }} ml</td>
+            </tr>
+            <tr>
+                <th class="text-secondary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Type de vape</th>
+                <td class="fs-5 bg-dark text-primary fw-medium">{{ vape.type }}</td>
+            </tr>
+            <tr>
+                <th class="text-secondary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Accu</th>
+                <td class="fs-5 bg-dark text-primary fw-medium">{{ vape.accu }}</td>
+            </tr>
+            <tr>
+                <th class="text-secondary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Puissance</th>
+                <td class="fs-5 bg-dark text-primary fw-medium">{{ vape.puissance }} W</td>
+            </tr>
+            <tr>
+                <th class="text-secondary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Description</th>
+                <td class="fs-5 bg-dark text-primary fw-medium">{{ vape.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-lg btn-outline-secondary text-primary me-5 mt-5" href="{{ path('app_vape_admin_index') }}">Revenir à la liste</a>
+
+    <a class="btn btn-lg btn-outline-secondary text-primary mt-5" href="{{ path('app_vape_admin_edit', {'id': vape.id}) }}">
+    Modifier {% include 'icon/edit.svg'%}</a>
+
+    {{ include('vape_admin/_delete_form.html.twig') }}
+    </section>
+{% endblock %}

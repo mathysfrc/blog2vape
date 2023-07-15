@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('app_vape_admin_delete', {'id': vape.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ vape.id) }}">
+    <button class="btn btn-lg btn-outline-secondary text-primary my-5">Supprimer {% include 'icon/delete.svg' %}</button>
+</form>
