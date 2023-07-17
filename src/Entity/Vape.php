@@ -73,6 +73,9 @@ class Vape
     #[ORM\ManyToOne(inversedBy: 'category')]
     private ?VapeCategory $category = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $link = null;
+
 
     public function getId(): ?int
     {
