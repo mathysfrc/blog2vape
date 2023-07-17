@@ -49,4 +49,5 @@ class VapeController extends AbstractController
         'vape' => $vape,
         ]);
     }
+    
 }

@@ -11,6 +11,7 @@ Encore
     .setOutputPath('public/build/')
     // public path used by the web server to access the output path
     .setPublicPath('/build')
+
     .addStyleEntry('home', './assets/styles/home.scss')
     .addStyleEntry('presentation', './assets/styles/presentation.scss')
     .addStyleEntry('vape', './assets/styles/vape.scss')
@@ -92,5 +93,17 @@ Encore
 
     .enableSassLoader()
 ;
+
+const fullConfig = Encore.getWebpackConfig();
+fullConfig.devServer = {
+    headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+        'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
+    },
+    watchFiles: {
+        paths: ['templates/**/*.html.twig']
+    }
+};
 
 module.exports = Encore.getWebpackConfig();
