@@ -73,6 +73,9 @@ class Vape
     #[ORM\ManyToOne(inversedBy: 'category')]
     private ?VapeCategory $category = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $link = null;
+
 
     public function getId(): ?int
     {
@@ -256,6 +259,18 @@ class Vape
     public function setCategory(?VapeCategory $category): static
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->link;
+    }
+
+    public function setLink(?string $link): static
+    {
+        $this->link = $link;
 
         return $this;
     }
