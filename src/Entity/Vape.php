@@ -22,48 +22,62 @@ class Vape
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
     private ?string $brand = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
     private ?string $model = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
     private ?int $price = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
     private ?int $height = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
     private ?int $length = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
     private ?int $width = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
     private ?int $diametre = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
     private ?int $contenance = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
     private ?string $type = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
     private ?int $accu = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
     private ?int $puissance = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[Assert\Length(max: 255)]
     private ?string $poster = null;
 
     #[Vich\UploadableField(mapping: 'vape_file', fileNameProperty: 'poster')]
     #[Assert\File(
         maxSize: '1M',
-        mimeTypes: ['image/jpeg', 'image/png', 'image/webp'],
+        mimeTypes: ['image/jpeg', 'image/png', 'image/webp',
+        ],
     )]
     private ?File $posterFile = null;
 
@@ -231,24 +245,25 @@ class Vape
         return $this->poster;
     }
 
-    public function setPoster(?string $poster): Vape
+    public function setPoster(?string $poster): static
     {
         $this->poster = $poster;
 
         return $this;
     }
 
-    public function getPosterFile(): ?File
+    public function setPosterFile(?File $poster = null): Vape
     {
-        return $this->posterFile;
-    }
-
-    public function setPosterFile(File $image = null): Vape
-    {
-        if ($image) {
+        $this->posterFile = $poster;
+        if ($poster) {
             $this->updatedAt = new DateTime('now');
         }
         return $this;
+    }
+
+    public function getPosterFile(): ?File
+    {
+        return $this->posterFile;
     }
 
     public function getCategory(): ?VapeCategory
@@ -259,6 +274,18 @@ class Vape
     public function setCategory(?VapeCategory $category): static
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->link;
+    }
+
+    public function setLink(?string $link): Vape
+    {
+        $this->link = $link;
 
         return $this;
     }
