@@ -21,6 +21,9 @@
 			<div class="col-7 mx-5 my-5">
 				<h3 class="text-secondary text-uppercase">
 					Caractéristiques</h3>
+								{% if app.user %}
+				{{ include('vape/_favorite_form.html.twig') }}
+			{% endif %}
 				<p class="mt-4 fs-5 mb-0">
 					<span class="fw-bold">HAUTEUR</span>:
 						{{ vape.height }}

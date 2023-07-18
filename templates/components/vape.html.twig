@@ -6,9 +6,6 @@
 				{{ vape.brand }}</h5>
 			<p class="card-text d-flex justify-content-center text-primary">
 				{{ vape.model }}</p>
-			{% if app.user %}
-				{{ include('vape/_favorite_form.html.twig') }}
-			{% endif %}
 			<a href=" {{ path("vape_show", {'id': vape.id}) }}" class="btn btn-lg d-flex text-uppercase justify-content-center btn-outline-secondary text-primary">En savoir + ?</a>
 		</div>
 	</div>

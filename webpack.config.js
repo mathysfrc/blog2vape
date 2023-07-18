@@ -18,6 +18,7 @@ Encore
     .addStyleEntry('description', './assets/styles/description.scss')
     .addStyleEntry('connexion', './assets/styles/connexion.scss')
     .addStyleEntry('admin', './assets/styles/admin.scss')
+    .addStyleEntry('favoris', './assets/styles/favoris.scss')
     // only needed for CDN's or subdirectory deploy
     //.setManifestKeyPrefix('build/')
     .copyFiles({
