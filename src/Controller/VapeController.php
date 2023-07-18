@@ -73,7 +73,7 @@ class VapeController extends AbstractController
             }
             $userRepository->save($user, true);
         }
-        return $this->redirectToRoute('app_vape', ['vape' => $vape], Response::HTTP_SEE_OTHER);
+        return $this->render('description/index.html.twig', ['vape' => $vape]);
     }
     
 }
