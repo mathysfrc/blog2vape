@@ -81,7 +81,9 @@
 					<div class="col d-flex justify-content-end">
 						<a href="{{ path('app_vape')}}" class="btn btn-lg my-5 btn-dark border border-secondary text-uppercase fw-bold">Retour</a>
 					</div>
+					{% if app.user %}
 					<a href=" {{ vape.link }}" target="_blank">Consultez le lien d'achat de la Vape</a>
+					{% endif %}
 				</div>
 			</div>
 		</div>
