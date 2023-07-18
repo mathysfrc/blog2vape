@@ -10,3 +10,5 @@ import './bootstrap.js';
 import './styles/app.scss';
 
 require ('bootstrap');
+
+import 'bootstrap-icons/font/bootstrap-icons.css'; 
