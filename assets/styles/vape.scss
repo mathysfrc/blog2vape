@@ -26,6 +26,7 @@ body {
 .form-control {
     border: solid 1px $secondary;
     width: 630px;
+    margin-left: 10px;
     height: 50px;
     margin-right: 10px;
     margin-bottom: 1rem;
@@ -61,4 +62,18 @@ body {
 
 .form-control {
     width: 395px;
+}
+
+@media screen and (max-width:500px){
+    .search {
+        width: 300px;
+    }
+
+    .form-select {
+        width: 300px;
+    }
+
+    .form-control {
+        width: 300px;
+    }
 }

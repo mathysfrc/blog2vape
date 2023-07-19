@@ -65,13 +65,13 @@ class SearchVapeType extends AbstractType
             ->add('fork', ChoiceType::class, [
                 'choices' => self::FORK,
                 'required' => false,
-                'label' => 'FOURCHETTE DE PRIX',
+                'label' => 'PRIX',
                 
             ])
             ->add('watt', ChoiceType::class, [
                 'choices' => self::WATT,
                 'required' => false,
-                'label' => 'FOURCHETTE DE PUISSANCE',
+                'label' => 'PUISSANCE',
                 
             ]);
 

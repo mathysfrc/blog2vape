@@ -17,3 +17,10 @@ body {
     bottom: 54rem;
     left: 40rem;
 }
+
+@media screen and (max-width:500px){
+    .fav {
+        bottom: 85.9rem;
+        left: 18rem;
+    }
+}

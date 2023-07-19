@@ -15,10 +15,10 @@
 		<h1 class="d-flex justify-content-center mt-5 fw-bold">{{ vape.brand }}</h1>
 		<h2 class="d-flex justify-content-center mt-4 mb-5">{{ vape.model }}</h2>
 		<div class="row">
-			<div class="col-4 my-5">
+			<div class="col-md-4 col-12 my-5">
 				<img src="{% if vape.poster %}{{ asset('uploads/images/vape/') ~ vape.poster}}{% else %}{{ asset('build/images/placeholder-vape.jpeg')}}{% endif %}" class="imageDesc rounded rounded-10 border border-secondary" alt="...">
 			</div>
-			<div class="col-7 mx-5 my-5">
+			<div class="col-md-7 col-12 mx-md-5 mx-0 my-5">
 				<h3 class="text-secondary text-uppercase">
 					Caractéristiques</h3>
 								{% if app.user %}
