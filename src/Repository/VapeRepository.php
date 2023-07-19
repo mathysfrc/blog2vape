@@ -21,7 +21,7 @@ class VapeRepository extends ServiceEntityRepository
         parent::__construct($registry, Vape::class);
     }
 
-    public function findLikeName(string $name, string $categories): array
+    public function findLikeName(string $name, string $category, string $brand): array
     {
         $queryBuilder = $this->createQueryBuilder('v');
 
@@ -31,9 +31,15 @@ class VapeRepository extends ServiceEntityRepository
         }
 
 
-        if (!empty($contract)) {
-            $queryBuilder->andWhere('v.model LIKE :categories')
-                ->setParameter('categories', $categories);
+        if (!empty($category)) {
+            $queryBuilder->andWhere('v.category LIKE :category')
+                ->setParameter('category', $category);
+        }
+
+
+        if (!empty($brand)) {
+            $queryBuilder->andWhere('v.brand LIKE :brand')
+                ->setParameter('brand', $brand);
         }
 
         $queryBuilder

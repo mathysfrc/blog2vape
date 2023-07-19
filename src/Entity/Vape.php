@@ -86,14 +86,15 @@ class Vape
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?DatetimeInterface $updatedAt = null;
 
-    #[ORM\ManyToOne(inversedBy: 'category')]
-    private ?VapeCategory $category = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $link = null;
 
     #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'favorite')]
     private Collection $favorite;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $category = null;
 
     public function __construct()
     {
@@ -276,18 +277,6 @@ class Vape
         return $this->posterFile;
     }
 
-    public function getCategory(): ?VapeCategory
-    {
-        return $this->category;
-    }
-
-    public function setCategory(?VapeCategory $category): static
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
     public function getLink(): ?string
     {
         return $this->link;
@@ -323,6 +312,18 @@ class Vape
         if ($this->favorite->removeElement($favorite)) {
             $favorite->removeFavorite($this);
         }
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?string $category): static
+    {
+        $this->category = $category;
 
         return $this;
     }
