@@ -11,11 +11,17 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 class SearchVapeType extends AbstractType
 {
     public const CATEGORIES = [
-        'Stop cigarette' => 'Stop cigarette',
-        'Medium' => 'Medium',
-        'Grosse fumée' => 'Grosse fumée',
+        'Débutant' => 'Débutant',
+        'Intermédiaire' => 'Intermédiaire',
+        'Expert' => 'Expert',
     ];
 
+    public const BRAND = [
+        'ELEAF' => 'ELEAF',
+        'SMOK' => 'SMOK',
+        'VAPORESSO' => 'VAPORESSO',
+        'VAPO' => 'VAPO',
+    ];
 
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -25,10 +31,15 @@ class SearchVapeType extends AbstractType
                 'required' => false,
                 'label' => 'MOTS CLÉS',
             ])
-            ->add('categories', ChoiceType::class, [
+            ->add('category', ChoiceType::class, [
                 'choices' => self::CATEGORIES,
                 'required' => false,
                 'label' => 'CATEGORIES',
+            ])
+            ->add('brand', ChoiceType::class, [
+                'choices' => self::BRAND,
+                'required' => false,
+                'label' => 'MARQUE',
             ]);
     }
 

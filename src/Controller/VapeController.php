@@ -17,7 +17,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 class VapeController extends AbstractController
 {
     #[Route('/vape', name: 'app_vape')]
-    public function index(Request $request, VapeRepository $vapeRepository, VapeCategoryRepository $vapeCategoryRepository): Response
+    public function index(Request $request, VapeRepository $vapeRepository): Response
     {
 
         
@@ -25,18 +25,16 @@ class VapeController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $search = $form->getData()['search'] ?? '';
-            $categories = $form->getData()['categories'] ?? '';
+            $category = $form->getData()['category'] ?? '';
+            $brand = $form->getData()['brand'] ?? '';
 
-            $vape = $vapeRepository->findLikeName($search, $categories);
+            $vape = $vapeRepository->findLikeName($search, $category, $brand);
         } else {
             $vape = $vapeRepository->findAll();
         }
 
         return $this->render('vape/index.html.twig', [
             'controller_name' => 'VapeController',
-            'category' => $vapeCategoryRepository->findBy([], [
-                'name' => 'ASC',
-            ]),
 
             'vaper' => $vape,
             'form' => $form,
