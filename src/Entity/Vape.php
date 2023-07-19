@@ -96,6 +96,12 @@ class Vape
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $category = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $fork = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $watt = null;
+
     public function __construct()
     {
         $this->favorite = new ArrayCollection();
@@ -324,6 +330,30 @@ class Vape
     public function setCategory(?string $category): static
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getFork(): ?string
+    {
+        return $this->fork;
+    }
+
+    public function setFork(string $fork): static
+    {
+        $this->fork = $fork;
+
+        return $this;
+    }
+
+    public function getWatt(): ?string
+    {
+        return $this->watt;
+    }
+
+    public function setWatt(?string $watt): static
+    {
+        $this->watt = $watt;
 
         return $this;
     }

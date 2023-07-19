@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Vape;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichFileType;
@@ -12,6 +13,23 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 class VapeType extends AbstractType
 {
+
+    public const FORK = [
+        '0 - 30 €' => '0 - 30 €',
+        '30 - 50 €' => '30 - 50 €',
+        '50 - 80 €' => '50 - 80 €',
+        '80 - 130 €' => '80 - 130 €',
+        '+ 130 €' => '+ 130 €',
+    ];
+
+    public const WATT = [
+        '0 - 30W' => '0 - 30W',
+        '30 - 50W' => '30 - 50W',
+        '50 - 80W' => '50 - 80W',
+        '80 - 130W' => '80 - 130W',
+        '+ 130W' => '+ 130W',
+    ];
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -35,6 +53,11 @@ class VapeType extends AbstractType
                     'placeholder' => 'Entrer le prix'
                 ]
             ])
+            ->add('fork', ChoiceType::class, [
+                'choices' => self::FORK,
+                'required' => false,
+                'label' => 'Fourchette de prix',
+                ])
             ->add('height', IntegerType::class, [
                 'label' => 'Hauteur',
                 'attr' => [
@@ -82,6 +105,11 @@ class VapeType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Entrer la puissance'
                 ]
+            ])
+            ->add('watt', ChoiceType::class, [
+                'choices' => self::WATT,
+                'required' => false,
+                'label' => 'Fourchette de puissance'
             ])
             ->add('description', TextType::class, [
                 'label' => 'Description',

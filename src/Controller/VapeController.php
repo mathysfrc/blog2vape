@@ -27,8 +27,10 @@ class VapeController extends AbstractController
             $search = $form->getData()['search'] ?? '';
             $category = $form->getData()['category'] ?? '';
             $brand = $form->getData()['brand'] ?? '';
+            $fork = $form->getData()['fork'] ?? '';
+            $watt = $form->getData()['watt'] ?? '';
 
-            $vape = $vapeRepository->findLikeName($search, $category, $brand);
+            $vape = $vapeRepository->findLikeName($search, $category, $brand, $fork, $watt);
         } else {
             $vape = $vapeRepository->findAll();
         }
