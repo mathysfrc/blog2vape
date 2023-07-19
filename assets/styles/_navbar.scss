@@ -25,3 +25,13 @@ img.logo-nav {
     width: 40px;
     height: 40px;
 }
+
+.navbarCol {
+    background-color: transparent;
+}
+
+@media screen and (max-width:500px){
+    .navbarCol {
+        background-color: black;
+    }
+}

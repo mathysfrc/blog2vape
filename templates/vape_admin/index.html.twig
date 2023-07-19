@@ -12,6 +12,7 @@
 
 {% block body %}
 	<section class="container">
+
 		<h1 class="my-5 text-primary d-flex justify-content-center align-self-center text-uppercase">Admin || Les Vapes</h1>
 
 		<table class="table">
@@ -20,8 +21,8 @@
 					<th class="text-primary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Marque</th>
 					<th class="text-primary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Modèle</th>
 					<th class="text-primary bg-dark fw-bold text-uppercase fs-5 mx-md-5 mx-0 my-5">Prix</th>
-                    <th class="bg-dark"></th>
-                    <th class="bg-dark"></th>
+					<th class="bg-dark"></th>
+					<th class="bg-dark"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -29,12 +30,14 @@
 					<tr>
 						<td class="fs-5 bg-dark text-primary fw-medium">{{ vape.brand }}</td>
 						<td class="fs-5 bg-dark text-primary fw-medium">{{ vape.model }}</td>
-						<td class="fs-5 bg-dark text-primary fw-medium">{{ vape.price }} €</td>
-                        
+						<td class="fs-5 bg-dark text-primary fw-medium">{{ vape.price }}
+							€</td>
+
 						<td class="bg-dark">
-							<a class="mx-5 d-flex justify-content-center" href="{{ path('app_vape_admin_show', {'id': vape.id}) }}"> {% include 'icon/show.svg'%}</a>
-                        </td>
-                        <td class="bg-dark">
+							<a class="mx-5 d-flex justify-content-center" href="{{ path('app_vape_admin_show', {'id': vape.id}) }}">
+								{% include 'icon/show.svg'%}</a>
+						</td>
+						<td class="bg-dark">
 							<a class="d-flex justify-content-center" href="{{ path('app_vape_admin_edit', {'id': vape.id}) }}">{% include 'icon/edit.svg' %}</a>
 						</td>
 					</tr>

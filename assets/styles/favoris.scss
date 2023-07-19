@@ -6,8 +6,18 @@ body {
     color: $primary;
 }
 
-form {
+.etiquette {
     position: absolute;
-    top: 7rem;
-    left: 4rem;
+    bottom: 17rem;
+    right: 7.7rem;
+    filter: drop-shadow(1.3em 1.3em 2rem rgb(0, 0, 0));
+    
+}
+
+.priceCard {
+    position: absolute;
+    bottom: 22.7rem;
+    left: 1.5rem;
+    text-shadow: 1px 0 $dark, -1px 0 $dark, 0 1px $dark, 0 -1px $dark,
+    1px 1px $dark, -1px -1px $dark, 1px -1px $dark, -1px 1px $dark;
 }

@@ -16,3 +16,9 @@ h1 {
     text-shadow: 2px 0 $secondary, -2px 0 $secondary, 0 2px $secondary, 0 -2px $secondary,
     1px 1px $secondary, -1px -1px $secondary, 1px -1px $secondary, -1px 1px $secondary;
 }
+
+@media screen and (max-width:500px){
+    h1 {
+        font-size: 3rem;
+    }
+}
