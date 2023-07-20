@@ -4,4 +4,27 @@ body {
     margin: 0;
     background-color: $dark;
     color: $primary;
+    background-image: url(/assets/images/smoke.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.card-body {
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+@media screen and (max-width:500px) {
+
+
+    #registration_form_email,
+    #registration_form_plainPassword {
+        width: 90%;
+      margin-left: 15px;
+    }
+
+    .form-label, .form-check, .mb-0 {
+        margin-left: 15px;
+    }
 }
