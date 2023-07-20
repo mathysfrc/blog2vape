@@ -65,6 +65,16 @@ body {
     width: 395px;
 }
 
+.drop {
+    width: 5rem;
+    --bs-dropdown-min-width: 31rem;
+    background-color: black;
+}
+
+.btn-image {
+    border: none;
+    background-color: black;
+}
 
 
 @media screen and (max-width:500px){

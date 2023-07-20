@@ -11,9 +11,10 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 class SearchVapeType extends AbstractType
 {
     public const CATEGORIES = [
-        'Débutant' => 'Débutant',
-        'Intermédiaire' => 'Intermédiaire',
-        'Expert' => 'Expert',
+        'Tube' => 'Tube',
+        'Pod' => 'Pod',
+        'Jetable' => 'Jetable',
+        'Box' => 'Box',
     ];
 
     public const BRAND = [
