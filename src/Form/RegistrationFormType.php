@@ -20,6 +20,7 @@ class RegistrationFormType extends AbstractType
             ->add('email')
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
+                'label' => 'Acceptez les termes',
                 'constraints' => [
                     new IsTrue([
                         'message' => 'Vous devez acceptez les conditions d\'enregistrement.',

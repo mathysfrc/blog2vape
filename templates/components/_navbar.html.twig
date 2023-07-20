@@ -7,35 +7,35 @@
 			<img class="logo-nav img-fluid" src=" {{ asset('build/images/logo.jpeg') }} " alt="Logo Blog2Vape">
 		</a>
 		<div class="btn-group dropstart order-md-2">
-			<button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+			<button type="button" class="btn-show" data-bs-toggle="dropdown" aria-expanded="false">
 				<a class="mx-3">
 					<img class="profil-nav" src=" {{ asset('build/images/profil.png') }} " alt="Section Profil">
 				</a>
 			</button>
-			<ul class="dropdown-menu">
+			<ul class="dropdown-menu bg-dark border border-secondary">
 				{% if (is_granted('ROLE_ADMIN')) %}
 					<li class="nav-item">
-						<a class="nav-link mx-5 my-3 fs-4 fw-bold text-black" href="{{ path('app_vape_admin_index')}}">Admin</a>
+						<a class="nav-link mx-5 my-3 fs-4 fw-bold text-white" href="{{ path('app_vape_admin_index')}}">Admin</a>
 					</li>
 				{% endif %}
 				{% if app.user and not (is_granted('ROLE_ADMIN')) %}
 					<li class="nav-item">
-						<a class="nav-link mx-5 my-3 fs-4 fw-bold text-black" href=" {{ path('app_favourite') }}">Favoris</a>
+						<a class="nav-link mx-5 my-3 fs-4 fw-bold text-white" href=" {{ path('app_favourite') }}">Favoris</a>
 					</li>
 				{% endif %}
 				{% if app.user %}
 					<li class="nav-item">
-						<a class="nav-link mx-5 my-3 fs-4 fw-bold text-black" href="{{ path('app_logout')}}">Déconnexion</a>
+						<a class="nav-link mx-5 my-3 fs-4 fw-bold text-white" href="{{ path('app_logout')}}">Déconnexion</a>
 					</li>
 				{% endif %}
 				{% if not app.user %}
 
 					<li class="nav-item">
-						<a class="nav-link mx-5 my-3 fs-4 fw-bold text-black" href="{{ path('app_register') }}">Inscription</a>
+						<a class="nav-link mx-5 my-3 fs-4 fw-bold text-white" href="{{ path('app_register') }}">Inscription</a>
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link mx-5 my-3 fs-4 fw-bold text-black" href=" {{ path('app_login') }}">Connexion</a>
+						<a class="nav-link mx-5 my-3 fs-4 fw-bold text-white" href=" {{ path('app_login') }}">Connexion</a>
 					</li>
 				{% endif %}
 			</ul>

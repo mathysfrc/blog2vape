@@ -34,6 +34,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToMany(targetEntity: Vape::class, inversedBy: 'favorite')]
     private Collection $favorite;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $firstname = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $lastname = null;
+
     public function __construct()
     {
         $this->favorite = new ArrayCollection();
@@ -137,5 +143,29 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function isFavorite(Vape $vape): bool
     {
         return in_array($vape, $this->getFavorite()->toArray());
+    }
+
+    public function getFirstname(): ?string
+    {
+        return $this->firstname;
+    }
+
+    public function setFirstname(?string $firstname): static
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getLastname(): ?string
+    {
+        return $this->lastname;
+    }
+
+    public function setLastname(?string $lastname): static
+    {
+        $this->lastname = $lastname;
+
+        return $this;
     }
 }

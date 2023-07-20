@@ -10,19 +10,38 @@
 	{{ encore_entry_link_tags('connexion') }}
 {% endblock %}
 {% block body %}
-	<section class="container">
-		<h1 class="my-5 text-primary d-flex justify-content-center align-self-center text-uppercase">S'identifier</h1>
+	<section class="vh-90 gradient-custom">
+		<div class="container py-5 h-100">
+			<div class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+					<div class="card-body bg-dark py-5 px-md-5">
+						<div class="mb-md-5 mt-md-4 pb-5">
+							<h1 class="fw-bold mb-2 text-uppercase d-flex justify-content-center fs-2">S'identifier</h1>
+							<p class="text-white-50 mb-5 d-flex justify-content-center">Entrez votre email et créez un mot de passe</p>
 
-		{{ form_errors(registrationForm) }}
+							{{ form_errors(registrationForm) }}
 
-		{{ form_start(registrationForm) }}
-		{{ form_row(registrationForm.email) }}
-		{{ form_row(registrationForm.plainPassword, {
-            label: 'Mot de passe'
-        }) }}
-		{{ form_row(registrationForm.agreeTerms) }}
+							{{ form_start(registrationForm) }}
+						
+							{{ form_row(registrationForm.email) }}
+							{{ form_row(registrationForm.plainPassword, {
+		            label: 'Mot de passe'
+		        }) }}
+							{{ form_row(registrationForm.agreeTerms) }}
+							<div class="d-flex justify-content-center">
+							<button type="submit" class="btn btn-outline-secondary text-light btn-lg px-5 mt-5">S'enregistrer</button>
+							</div>
+							{{ form_end(registrationForm) }}
+						</div>
 
-		<button type="submit" class="btn btn-lg btn-outline-secondary text-primary my-5">S'enregistrer</button>
-		{{ form_end(registrationForm) }}
+							<div class="d-flex justify-content-center">
+								<p class="mb-0">Vous avez déjà un compte ?
+									<a href="{{ path('app_login')}}" class="text-white-50 fw-bold">Se connecter</a>
+								</p>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 {% endblock %}
