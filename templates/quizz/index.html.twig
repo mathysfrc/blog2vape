@@ -11,10 +11,10 @@
 {% block body %}
 			<div class="fullpage black-bg centered">
 			<div class="container start">
-				<h1 id="questionaire-title" class="titleQuizz">Quelle vape est faite pour toi ?</h1>
+				<h1 id="questionaire-title" class="titleQuizz">Quelle catégorie de vape est faite pour vous ?</h1>
 				<div class="centered">
 					<div class="button" onclick="showPage(2); setupQuestion();">
-						<p class="start">START</p>
+						<p class="start">GO</p>
 					</div>
 				</div>
 			</div>
@@ -71,19 +71,19 @@ question0: {
 question: "Combien de cigarette fum(i)ez-vous ?",
 option0: {
 content: 'Entre 0 et 10',
-personality: "Adventurous"
+personality: "Jetable"
 },
 option1: {
 content: 'Entre 10 et 20',
-personality: "Intellectual"
+personality: "Tube"
 },
 option2: {
 content: 'Entre 1 et 2 paquets',
-personality: "Immersed"
+personality: "Pod"
 },
 option3: {
 content: 'Plus de 2 paquets',
-personality: "Dreamy"
+personality: "Box"
 }
 },
 question1: {
@@ -91,22 +91,22 @@ question: "Depuis quand avez-vous arrêté ?",
 option0: {
 type: "string",
 content: "Moins de 2 mois",
-personality: "Adventurous"
+personality: "Tube"
 },
 option1: {
 type: "string",
 content: "Entre 2 et 5 mois",
-personality: "Intellectual"
+personality: "Box"
 },
 option2: {
 type: "string",
 content: "Entre 5 mois et 1 an",
-personality: "Immersed"
+personality: "Pod"
 },
 option3: {
 type: "string",
 content: " + de 1 an",
-personality: "Dreamy"
+personality: "Jetable"
 }
 },
 question2: {
@@ -114,22 +114,22 @@ question: "Que voulez-vous",
 option0: {
 type: "string",
 content: "Arrêter de fumer",
-personality: "Adventurous"
+personality: "Tube"
 },
 option1: {
 type: "string",
 content: "Réduire votre consommation de tabac",
-personality: "Dreamy"
+personality: "Jetable"
 },
 option2: {
 type: "string",
 content: "Juste essayer",
-personality: "Intellectual"
+personality: "Pod"
 },
 option3: {
 type: "string",
 content: "Faire beaucoup de fumée",
-personality: "Immersed"
+personality: "Box"
 }
 },
 question3: {
@@ -137,22 +137,22 @@ question: "Quel type de vape cherchez-vous",
 option0: {
 type: "string",
 content: "De la forme d'une cigarette",
-personality: "Immersed"
+personality: "Tube"
 },
 option1: {
 type: "string",
 content: "Avec un bouton pour effectuer le tirage",
-personality: "Intellectual"
+personality: "Pod"
 },
 option2: {
 type: "string",
 content: "Une vape discrète",
-personality: "Dreamy"
+personality: "Jetable"
 },
 option3: {
 type: "string",
 content: "Une grosse vape",
-personality: "Adventurous"
+personality: "Box"
 }
 },
 question4: {
@@ -160,40 +160,40 @@ question: "Pourquoi voulez-vous arrêter de fumer",
 option0: {
 type: "string",
 content: "Familial",
-personality: "Adventurous"
+personality: "Tube"
 },
 option1: {
 type: "string",
 content: "Santée",
-personality: "Intellectual"
+personality: "Jetable"
 },
 option2: {
 type: "string",
 content: "Argent",
-personality: "Dreamy"
+personality: "Pod"
 },
 option3: {
 type: "string",
 content: "Simple décision",
-personality: "Immersed"
+personality: "Box"
 }
 }
 };
 
 // constant to store the description for each type of traveller
 const result = {
-Adventurous: ["Tu es toujours prêt à relever des défis, à essayer de nouvelles activités extrêmes et à sortir de sa zone de confort. Tu aimes explorer des destinations éloignées et hors des sentiers battus, et souvent accompagné d'un groupe d'amis qui partagent ta passion pour l'aventure"],
-Immersed: ["Tu aimes faire la fête et profiter de la vie nocturne dans chaque destination qu'il visite. Toujours prêt à sortir dans les clubs, les bars et les festivals locaux, et souvent accompagné d'un groupe d'amis qui partagent ta passion pour la fête."],
-Intellectual: ["Tu es passionné par la cuisine locale et aime essayer de nouveaux plats et de nouvelles saveurs. Tu aimes visiter des marchés locaux, des restaurants et des bars à tapas, et tu es souvent accompagné d'un groupe d'amis qui partagent ta passion pour la gastronomie"],
-Dreamy: ["If your travel dreams are populated by the perfect sunset on a secluded beach in the Seychelles, gondola rides in Venice, and catching falling Sakura flowers, this is probably you.", "Travel can be an amazing way to inspire creativity and connect with your inner muse! Check out Travel and Leisure's list of the 50 most dreamy places for a general idea of what's out there in the way of romantic destinations. The notion of taking off to far-flung places is a dream come through in itself, so grab your passports, and get out and see the world.", "Recommended spots for dreamy travelers: Santorini, Venice, Paris, Buenos Aires, Goa, Bali, Phuket, Fiji, Tahiti."]
+Tube: ["Tu viens d'arrêter de fumer ou tu essayes, tu veux garder la forme de la cigarette pour ne pas trop être dépaysagé, c'est la catégorie des 'Tubes' qui te correspond le mieux via tes réponses, n'hésite pas dans la barre de recherche à selectionner 'Tube' dans les catégories pour retrouver toutes les vapes pouvant te correspondre !"],
+Pod: ["Tu as déjà arrêté de fumer ou tu fumes très peu, tu veux une vape discrète, avec un prix non-excessif tout en gardant un petit peu l'allure d'une cigarette, c'est la catégorie des 'Pods' qui te correspond le mieux via tes réponses, séléctionne 'Pod' dans les catégories de la barre de recherche pour retrouver toutes les vapes pouvant te correspondre !"],
+Box: ["Tu viens d'arrêter de fumer ou tu as déjà passé le cap, tu veux produire des gros nuages de fumée, pour toi, l'addiction passe maintenant derrière le style, c'est la catégorie des 'Boxs' qui te correspond le mieux via tes réponses, séléctionne 'Box' dans les catégories de la barre de recherche pour retrouver toutes les vapes pouvant te correspondre !"],
+Jetable: ["Tu viens d'arrêter de fumer ou tu essayes, tu veux garder la forme de la cigarette tout en pouvant la jeter une fois fini, remplir, changer son matos, ce n'est pas ton truc, alors, c'est la catégorie des 'Jetables' qui te correspond le mieux, séléctionne 'Jetable' dans les catégories de la barre de recherche pour retrouver toutes les vapes pouvant te correspondre !"],
 };
 
 // for keeping track of the score
 var score = {
-Adventurous: 0,
-Immersed: 0,
-Intellectual: 0,
-Dreamy: 0
+Tube: 0,
+Pod: 0,
+Box: 0,
+Jetable: 0
 };
 
 // for keep track of the current question
@@ -261,24 +261,24 @@ setupQuestion();
 // else quiz is completed
 // assume that the highest score is the adventurous personality
 // and go through each of the personality type, and update the highest score and personality
-var highestScore = score["Adventurous"];
-var highestPersonality = "Adventurous";
-if (highestScore < score["Intellectual"]) {
-highestScore = score["Intellectual"];
-highestPersonality = "Intellectual";
+var highestScore = score["Tube"];
+var highestPersonality = "Tube";
+if (highestScore < score["Pod"]) {
+highestScore = score["Pod"];
+highestPersonality = "Pod";
 }
-if (highestScore < score["Immersed"]) {
-highestScore = score["Immersed"];
-highestPersonality = "Immersed";
+if (highestScore < score["Jetable"]) {
+highestScore = score["Jetable"];
+highestPersonality = "Jetable";
 }
-if (highestScore < score["Dreamy"]) {
-highestScore = score["Dreamy"];
-highestPersonality = "Dreamy";
+if (highestScore < score["Box"]) {
+highestScore = score["Box"];
+highestPersonality = "Box";
 }
 
 // get the description of the personality and update the result page
 var personalityResult = result[highestPersonality];
-document.getElementById("personality-type").innerText = highestPersonality + " Traveller";
+document.getElementById("personality-type").innerText = highestPersonality;
 document.getElementById("personality-part-1").innerText = personalityResult[0];
 document.getElementById("personality-part-2").innerText = personalityResult[1];
 document.getElementById("personality-recommended").innerText = personalityResult[2];
